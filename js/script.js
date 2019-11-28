@@ -113,12 +113,19 @@ $(function() {
 
             // get the digit from divided to subtract
             let dividDigit = '';
-            $.each(dividendArray, function(index,value){
-                console.log(value)
-            })
+            // $.each(dividendArray, function(index,value){
+            //     console.log(value)
+            // })
 
-           
-           
+            for(let k=0; k < multiplyLength; k++){
+               let x = dividendArray[k];
+               dividDigit += x;   
+            }
+
+            let subtractValue = multiply-Number(dividDigit);
+            console.log('subtractValue', subtractValue);
+        
+           console.log('dividDigit', dividDigit);   
 
             // let diff = dividendArray.
 
@@ -128,13 +135,12 @@ $(function() {
                     let x  = `<span class='drop' data-ans='${multiplyArray[j]}'>${multiplyArray[j]}</span>`
                     span += x;
                 }
-                let html = `
-                            <div class="dividentSolution">
+                let html = `<div class="dividentSolution">
                                    <p>${span}</p>
                             </div>`;
                 $('#solContainer').append(html);
             }else{
-                console.log('i ', i)
+                // console.log('i ', i)
 
             }
         }
@@ -145,7 +151,7 @@ $(function() {
 function dividentSolutionWidth(){
     let W = $('.divident').width();
     $('.divident').width(W+10);
-    console.log('divident width',W);
+    // console.log('divident width',W);
      W = $('.divident').width();
     $('.dividentSolution').width(W);
 }
