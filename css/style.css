@@ -1,0 +1,118 @@
+* {margin: 0px;padding: 0px;}
+body {
+	background: #a9a9a9;
+    font-family: sans-serif;
+	/*background-image: radial-gradient(#4CAF50, #009688);*/
+    background-size: cover;
+	background-position: unset;
+	background-repeat: no-repeat;
+    caret-color:transparent;
+}
+
+.wrapper{min-height: 100vh;max-width:960px;margin:0px auto;position: relative;}
+
+#header .logo h3 {
+flex-grow: 1;
+text-align: right;
+font-family: sans-serif;
+font-size: 28px;
+color: #fff;
+margin-top:0px;
+}
+
+#header .logo {margin: 0px auto;display: flex;align-items: center;}
+#header {padding: 15px; padding-bottom:0px;}
+#innerWrapper{  max-width: 960px;  margin: 15px;}
+#firstNo > span > span {
+left: -40px;
+position: absolute;
+top: -13px;
+font-size: 15px;
+width: 35px;
+text-align: center;
+height: 30px;
+}
+#innerWrapper h2{font-family: sans-serif;font-weight: bold;position: relative;left: -70px;}
+
+
+.questionContainer{
+display: flex;
+justify-content: center;
+max-width: 500px;
+margin: auto;
+}
+.questionContainer .divisor{
+    border-right: 3px solid;
+    padding-right: 10px;
+    border-bottom-right-radius: 20px;
+    height: 40px;
+}
+.questionContainer .divident{
+padding: 0px 5px;
+    padding-top: 0px;
+border-top: 3px solid
+#000;
+background-size: contain;
+background-repeat: no-repeat;
+padding-top: 0px;
+}
+.questionContainer .quotient{
+        border-left: 3px solid;
+    padding-left: 10px;
+    border-bottom-left-radius: 20px;
+    height: 40px;
+}
+
+
+.commonFont span{
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    border: 1px solid;
+    font-size: 26px;
+    margin: 3px;
+    }
+
+.dividentSolution{border-bottom:1px solid #ddd;
+    border-bottom: 1px solid
+    #293029;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+}
+
+.divideOperatin{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.divident span{
+    border:none;
+}
+.divisor span{
+    border: none;
+    height: auto;
+    width: auto;
+}
+
+/****************  optimise for all device **********************/
+
+@media screen and (max-width: 768px) {
+
+
+}
+
+
+@media screen and (max-width: 500px) {
+.logoWrapper img{width:100px;}
+#header .logo h3{font-size:20px;}
+/*.ansContainer{flex-direction: column; margin-top: 10px;}*/
+.question{font-size: 13px;}
+.questionNo {margin-bottom: 10px;font-size: 18px;font-weight: normal;}
+#header{padding-bottom:0px; margin-bottom:0px;}
+
+
+} 
+/*  // media quesry end here...*/
