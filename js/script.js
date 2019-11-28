@@ -49,7 +49,9 @@ $(function() {
         $('.randBox').remove();
         // generate random numbers
        let randA = Math.ceil(Math.random() * (maxA - minA) + 1) + minA;
-       let randB = Math.ceil(Math.random() * (maxB - minB) + 1) + minB;       
+       let randB = Math.ceil(Math.random() * (maxB - minB) + 1) + minB;   
+       randA = 3;
+       randB = 108    
        console.log('divisor' ,randA);
        console.log('dividend',randB);
 
@@ -108,24 +110,25 @@ $(function() {
             let multiply  = randA*quotientWithoutDotArray[i];
             let multiplyArray = Array.from(multiply.toString(), Number);
             let multiplyLength = multiplyArray.length;
-            // console.log('multiplyArray', multiplyArray)
-            // console.log(multiplyLength);
-
+            console.log('multiplyArray', multiplyArray)
             // get the digit from divided to subtract
             let dividDigit = '';
-            // $.each(dividendArray, function(index,value){
-            //     console.log(value)
-            // })
 
             for(let k=0; k < multiplyLength; k++){
                let x = dividendArray[k];
+               if(multiply > x){
+                multiplyLength++;
+               }
                dividDigit += x;   
             }
 
-            let subtractValue = multiply-Number(dividDigit);
+            let subtractValue = Number(dividDigit)-multiply;
+            if(multiplyLength < dividendArray.length){
+                console.log('div is greaterthan multiply');
+            }
             console.log('subtractValue', subtractValue);
         
-           console.log('dividDigit', dividDigit);   
+            console.log('dividDigit', dividDigit);   
 
             // let diff = dividendArray.
 
