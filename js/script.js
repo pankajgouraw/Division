@@ -1,6 +1,7 @@
 $(function() {
 
-
+    let multiplyLength = '';  
+    let divdendIndex = '';    
 
     $("#headerText").text(headerText);
     $("#instruction").css({color: headerInstructionColor});
@@ -50,6 +51,10 @@ $(function() {
         // generate random numbers
        let randA = Math.ceil(Math.random() * (maxA - minA) + 1) + minA;
        let randB = Math.ceil(Math.random() * (maxB - minB) + 1) + minB;       
+
+       randA = 4;
+       randB = 811;
+
        console.log('divisor' ,randA);
        console.log('dividend',randB);
 
@@ -104,28 +109,43 @@ $(function() {
 
         console.log('quotientWithoutDotArray', quotientWithoutDotArray);
         let solutionStructure = '';
-        for(let i=0; i<quotientWithoutDotArray.length; i++){
+        for(let i=0; i<1; i++){
             let multiply  = randA*quotientWithoutDotArray[i];
             let multiplyArray = Array.from(multiply.toString(), Number);
-            let multiplyLength = multiplyArray.length;
+            multiplyLength = multiplyArray.length;
+
+            divdendIndex = multiplyLength;
             // console.log('multiplyArray', multiplyArray)
             // console.log(multiplyLength);
 
             // get the digit from divided to subtract
             let dividDigit = '';
-            // $.each(dividendArray, function(index,value){
-            //     console.log(value)
-            // })
-
-            for(let k=0; k < multiplyLength; k++){
+            let k=null;
+            for(k=0; k < divdendIndex; k++){
                let x = dividendArray[k];
                dividDigit += x;   
             }
-
             let subtractValue = multiply-Number(dividDigit);
+          
+            if(subtractValue < randA){
+                console.log('k divided index' ,  k);
+                   let x = dividendArray[k];
+                   // dividDigit = x;  
+                   console.log('div digit' ,subtractValue.toString() + x.toString()); 
+                   let appendfromTop = subtractValue.toString() + x.toString(); 
+
+                   if(Number(appendfromTop) < randA && dividendArray.length >=k ){
+                     k++;
+                     console.log('k', k)
+                     x = dividendArray[k];
+                     appendfromTop  +=  x.toString();
+                   }
+
+                   console.log('append to ' , appendfromTop);
+            }
+
             console.log('subtractValue', subtractValue);
-        
-           console.log('dividDigit', dividDigit);   
+            // console.log('dividDigit', dividDigit);   
 
             // let diff = dividendArray.
 
